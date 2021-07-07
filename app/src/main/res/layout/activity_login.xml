@@ -11,26 +11,25 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Username"
-        android:inputType="text">
+        android:inputType="text"/>
 
-    </EditText>
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etUsername"
         android:layout_marginTop="5dp"
         android:hint="Password"
-        android:inputType="text|textPassword">
+        android:inputType="text|textPassword"/>
 
-    </EditText>
+
 
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etPassword"
+        android:layout_below="@+id/etDescription"
         android:layout_alignParentEnd="true"
         android:layout_marginTop="5dp"
         android:layout_marginEnd="0dp"
@@ -40,7 +39,7 @@
         android:id="@+id/tvSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etPassword"
+        android:layout_below="@+id/etDescription"
         android:layout_alignParentStart="true"
         android:layout_marginStart="5dp"
         android:layout_marginTop="10dp"
@@ -53,4 +52,4 @@
         android:textStyle="italic" />
 
 
-</RelativeLayout>>
+</RelativeLayout>

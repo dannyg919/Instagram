@@ -26,7 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         etUsername = findViewById(R.id.etUsername);
-        etPassword = findViewById(R.id.etPassword);
+        etPassword = findViewById(R.id.etDescription);
         etPasswordConfirm = findViewById(R.id.etPasswordConfirm);
         etEmail = findViewById(R.id.etEmail);
         btnRegister = findViewById(R.id.btnRegister);
@@ -39,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
                 String passwordConfirm = etPasswordConfirm.getText().toString();
                 String email = etEmail.getText().toString();
 
-                if (password.length() <= 8 ) {
+                if (password.length() < 8 ) {
                     Toast.makeText(RegisterActivity.this,"Password must be at least 8 characters!",Toast.LENGTH_SHORT).show();
                 } else if (!(password.equals(passwordConfirm))) {
                     Toast.makeText(RegisterActivity.this,"Passwords must match!",Toast.LENGTH_SHORT).show();

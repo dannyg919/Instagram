@@ -21,7 +21,7 @@
         android:id="@+id/etPasswordConfirm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etPassword"
+        android:layout_below="@+id/etDescription"
         android:layout_marginTop="10dp"
         android:hint="Confirm Password"
         android:inputType="text|textPassword">
@@ -38,7 +38,7 @@
     </EditText>
 
     <EditText
-        android:id="@+id/etPassword"
+        android:id="@+id/etDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etUsername"
