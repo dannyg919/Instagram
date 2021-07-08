@@ -1,5 +1,6 @@
 package com.example.instagram;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.parse.ParseException;
@@ -14,22 +16,36 @@ import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
 public class RegisterActivity extends AppCompatActivity {
-    EditText etUsername;
-    EditText etPassword;
-    EditText etPasswordConfirm;
-    EditText etEmail;
-    Button btnRegister;
+    private EditText etUsername;
+    private EditText etPassword;
+    private EditText etPasswordConfirm;
+    private EditText etEmail;
+    private Button btnRegister;
+    private TextView tvLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
+
         etUsername = findViewById(R.id.etUsername);
         etPassword = findViewById(R.id.etDescription);
         etPasswordConfirm = findViewById(R.id.etPasswordConfirm);
         etEmail = findViewById(R.id.etEmail);
         btnRegister = findViewById(R.id.btnRegister);
+        tvLogin = findViewById(R.id.tvLogin);
+
+        tvLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(RegisterActivity.this,LoginActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
 
         btnRegister.setOnClickListener(new View.OnClickListener() {
             @Override

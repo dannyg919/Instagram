@@ -6,12 +6,22 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="150dp"
+        app:srcCompat="@drawable/nav_logo_whiteout" />
+
     <EditText
         android:id="@+id/etEmail"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etPasswordConfirm"
-        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
         android:hint="Email"
         android:inputType="textEmailAddress">
 
@@ -19,10 +29,11 @@
 
     <EditText
         android:id="@+id/etPasswordConfirm"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etDescription"
-        android:layout_marginTop="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
         android:hint="Confirm Password"
         android:inputType="text|textPassword">
 
@@ -30,33 +41,63 @@
 
     <EditText
         android:id="@+id/etUsername"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:hint="Enter Username"
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:hint="Username"
         android:inputType="text">
 
     </EditText>
 
     <EditText
         android:id="@+id/etDescription"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etUsername"
-        android:layout_marginTop="10dp"
-        android:hint="Enter Password"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:hint="Password"
         android:inputType="text|textPassword">
 
     </EditText>
 
     <Button
         android:id="@+id/btnRegister"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etEmail"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="Sign Up" />
+
+    <TextView
+        android:id="@+id/tvLogin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:text="Register" />
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="85dp"
+        android:layout_marginBottom="25dp"
+        android:clickable="true"
+        android:lineSpacingExtra="8sp"
+        android:text="Log in."
+        android:textAllCaps="false"
+        android:textColor="@color/design_default_color_primary_dark"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/LogIn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="25dp"
+        android:layout_toStartOf="@+id/tvLogin"
+        android:text="Already have an account? "
+        android:textSize="16sp" />
 
 
 </RelativeLayout>

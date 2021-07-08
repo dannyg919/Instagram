@@ -6,50 +6,73 @@
     android:layout_height="match_parent"
     tools:context=".LoginActivity">
 
+
     <EditText
         android:id="@+id/etUsername"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:hint="Username"
-        android:inputType="text"/>
-
+        android:layout_below="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:hint="Phone number, email or username"
+        android:inputType="text" />
 
     <EditText
-        android:id="@+id/etDescription"
-        android:layout_width="match_parent"
+        android:id="@+id/etPassword"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_below="@+id/etUsername"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
+        android:fontFamily="sans-serif"
         android:hint="Password"
-        android:inputType="text|textPassword"/>
-
+        android:inputType="text|textPassword" />
 
 
     <Button
         android:id="@+id/btnLogin"
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etDescription"
-        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/etPassword"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="5dp"
-        android:layout_marginEnd="0dp"
-        android:text="Login" />
+        android:text="Log In" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="200dp"
+        android:layout_height="70dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="200dp"
+        app:srcCompat="@drawable/nav_logo_whiteout" />
 
     <TextView
         android:id="@+id/tvSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/etDescription"
-        android:layout_alignParentStart="true"
-        android:layout_marginStart="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="85dp"
+        android:layout_marginBottom="25dp"
         android:clickable="true"
         android:lineSpacingExtra="8sp"
-        android:text="Sign Up Here"
+        android:text="Sign up."
         android:textAllCaps="false"
-        android:textColor="@color/purple_500"
+        android:textColor="@color/design_default_color_primary_dark"
         android:textSize="16sp"
-        android:textStyle="italic" />
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/SignUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="25dp"
+        android:layout_toStartOf="@+id/tvSignup"
+        android:text="Don't have an account? "
+        android:textSize="16sp" />
 
 
 </RelativeLayout>

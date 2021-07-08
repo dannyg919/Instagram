@@ -1,5 +1,6 @@
 package com.example.instagram;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -26,13 +27,16 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
+        
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.hide();
 
         if(ParseUser.getCurrentUser() != null){
             goMainActivity();
         }
 
         etUsername = findViewById(R.id.etUsername);
-        etPassword = findViewById(R.id.etDescription);
+        etPassword = findViewById(R.id.etPassword);
         tvSignup = findViewById(R.id.tvSignup);
         btnLogin = findViewById(R.id.btnLogin);
         btnLogin.setOnClickListener(new View.OnClickListener() {
