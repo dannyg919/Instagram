@@ -6,13 +6,12 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
-import android.util.Log;
 
+import com.example.instagram.adapters.PostsAdapter;
+import com.example.instagram.models.Post;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
-
-import org.json.JSONArray;
 
 import java.util.ArrayList;
 import java.util.List;
