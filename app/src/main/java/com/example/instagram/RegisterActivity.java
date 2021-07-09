@@ -72,7 +72,7 @@ public class RegisterActivity extends AppCompatActivity {
                                 Toast.makeText(RegisterActivity.this, "Login Failed!", Toast.LENGTH_SHORT).show();
                                 return;
                             } else {
-                                Intent i = new Intent(RegisterActivity.this,MainActivity.class);
+                                Intent i = new Intent(RegisterActivity.this, MainActivity.class);
                                 startActivity(i);
                                 finish();
                                 Toast.makeText(RegisterActivity.this, "Success!", Toast.LENGTH_SHORT).show();

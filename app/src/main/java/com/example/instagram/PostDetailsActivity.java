@@ -42,6 +42,8 @@ public class PostDetailsActivity extends AppCompatActivity {
         if (image != null) {
             Glide.with(this)
                     .load(image.getUrl())
+                    .override(1000,1000)
+                    .centerCrop()
                     .into(ivPost);
         }
 

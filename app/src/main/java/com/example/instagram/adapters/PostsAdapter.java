@@ -89,6 +89,8 @@ public class PostsAdapter extends RecyclerView.Adapter<PostsAdapter.ViewHolder> 
             if (image != null) {
                 Glide.with(context)
                         .load(image.getUrl())
+                        .override(1000,1000)
+                        .centerCrop()
                         .into(ivImage);
             }
 

@@ -27,7 +27,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        
+
         ActionBar actionBar = getSupportActionBar();
         actionBar.hide();
 
@@ -74,7 +74,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     public void goMainActivity() {
-        Intent i = new Intent(this,MainActivity.class);
+        Intent i = new Intent(this, MainActivity.class);
         startActivity(i);
         finish();
     }

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/home"
+        android:enabled="true"
+        android:icon="@drawable/ufi_home_icon"
+        android:title="Home"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/capture"
+        android:enabled="true"
+        android:icon="@drawable/ufi_post_icon"
+        android:title="Capture"
+        app:showAsAction="ifRoom" />
+
+
+    <item
+        android:id="@+id/profile"
+        android:enabled="true"
+        android:icon="@drawable/ufi_user_icon"
+        android:title="Profile"
+        app:showAsAction="ifRoom" />
+
+</menu>

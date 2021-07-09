@@ -1,12 +1,17 @@
-package com.example.instagram;
+package com.example.instagram.fragments;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 
+import com.example.instagram.R;
 import com.example.instagram.adapters.PostsAdapter;
 import com.example.instagram.models.Post;
 import com.parse.FindCallback;
@@ -16,25 +21,34 @@ import com.parse.ParseQuery;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FeedActivity extends AppCompatActivity {
+public class FeedFragment extends Fragment {
     protected List<Post> allPosts;
     protected RecyclerView rvPosts;
     protected PostsAdapter postAdapter;
     protected SwipeRefreshLayout swipeContainer;
 
+    public FeedFragment(){
+    }
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_feed);
+    public View onCreateView(LayoutInflater inflater, ViewGroup parent, Bundle savedInstanceState) {
+        // Defines the xml file for the fragment
+        return inflater.inflate(R.layout.fragment_feed, parent, false);
+    }
 
-        swipeContainer = (SwipeRefreshLayout) findViewById(R.id.swipeContainer);
-        rvPosts = findViewById(R.id.rvPosts);
+
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        // Setup any handles to view objects here
+        // EditText etFoo = (EditText) view.findViewById(R.id.etFoo);
+
+        swipeContainer = (SwipeRefreshLayout) view.findViewById(R.id.swipeContainer);
+        rvPosts = view.findViewById(R.id.rvPosts);
         allPosts = new ArrayList<>();
-        postAdapter = new PostsAdapter(this,allPosts);
+        postAdapter = new PostsAdapter(getContext(), allPosts);
 
         rvPosts.setAdapter(postAdapter);
-        rvPosts.setLayoutManager(new LinearLayoutManager(this));
+        rvPosts.setLayoutManager(new LinearLayoutManager(getContext()));
 
         swipeContainer.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -53,7 +67,10 @@ public class FeedActivity extends AppCompatActivity {
 
 
         queryPosts();
+
+
     }
+
 
 
     private void queryPosts() {
@@ -82,13 +99,15 @@ public class FeedActivity extends AppCompatActivity {
 
     public void fetchFeedAsync(int page) {
 
-                // Remember to CLEAR OUT old items before appending in the new ones
+        // Remember to CLEAR OUT old items before appending in the new ones
         postAdapter.clear();
-                // ...the data has come back, add new items to your adapter...
+        // ...the data has come back, add new items to your adapter...
         queryPosts();
-                // Now we call setRefreshing(false) to signal refresh has finished
+        // Now we call setRefreshing(false) to signal refresh has finished
         swipeContainer.setRefreshing(false);
 
     }
-
 }
+
+
+
